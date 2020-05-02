@@ -364,7 +364,8 @@ body.user-messages {
 /* ----- Header, check blocks/header.html ----- */
 #header {
   margin-top: 0px;
-  background: #16160f;
+  /* background: #16160f; */
+  background: #0288d1;
   font-family: 'Open Sans Condensed', Arial, sans-serif;
 }
 .content-wrapper {

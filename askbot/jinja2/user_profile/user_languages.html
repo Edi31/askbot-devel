@@ -13,7 +13,17 @@
             {% else %}
                 <p class="message">{% trans %}Subscribe to posts in these languages{% endtrans %}</p>
             {% endif %}
-            {{ languages_form.languages }}
+            {#{ languages_form.languages }#}
+            <ul id="id_languages">
+            {% for lang in languages_form.languages %}
+                <li>
+                    <label for="{{ lang.data.attrs.id }}">
+                        <input type="{{ lang.data.type }}" name="{{ lang.data.name }}" value="{{ lang.data.value }}" id="{{ lang.data.attrs.id }}" {% if lang.data.selected %}checked{% endif %} >
+                        <span>{{ lang.data.label }}</span>
+                    </label>
+                </li>
+            {% endfor %}
+            </ul>
             <label for="primary_language_id">{% trans %}My primary language is{% endtrans %}</label>{{ languages_form.primary_language }}
         </div>
         <input type="submit" class="select-language" value="{% trans %}Save{% endtrans %}" />
