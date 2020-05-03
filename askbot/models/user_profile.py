@@ -206,7 +206,7 @@ class LocalizedUserProfile(models.Model):
     language_code = LanguageCodeField(db_index=True)
     reputation = models.PositiveIntegerField(default=0, db_index=True)
     is_claimed = models.BooleanField(
-                            default=False,
+                            default=True,
                             db_index=True,
                             help_text='True, if user selects this language'
                         )
